@@ -6,12 +6,17 @@ Home
 <form action="{{url('/createProduct')}}" method="POST">
     {{ csrf_field() }}
     @if (Session::has('success'))
-    <div class="alert alert-success">
+    <div id='cus-alt' class="alert alert-success">
         {{-- {{Session::get('success')}} --}}
         {{session()->get('success')}}
         {{-- {{Session::put('success',null)}} --}}
         {{session()->put('success',null)}}
     </div>
+    <script>
+        setTimeout(function(){
+            document.getElementById('cus-alt').style.display='none';
+        }, 3000);
+    </script>
     @endif
     <div class="form-group">
         <label for="product_name">Product Name</label>

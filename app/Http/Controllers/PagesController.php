@@ -28,7 +28,7 @@ class PagesController extends Controller
         // $products = Product::get();
         // $products = Product::all();
         // $products = Product::orderBy('product_price', 'asc')->get();
-        $products = Product::orderBy('product_price', 'asc')->paginate(3);
+        $products = Product::orderBy('product_price', 'asc')->paginate(5);
         return view('pages.services')->with('products', $products);
     }
     //dynamic name profile
