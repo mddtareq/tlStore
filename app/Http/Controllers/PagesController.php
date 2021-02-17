@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\Test;
+use Illuminate\Support\Facades\Session;
 
 class PagesController extends Controller
 {
@@ -27,7 +28,7 @@ class PagesController extends Controller
         // $products = Product::get();
         // $products = Product::all();
         // $products = Product::orderBy('product_price', 'asc')->get();
-        $products = Product::orderBy('product_price', 'asc')->paginate(1);
+        $products = Product::orderBy('product_price', 'asc')->paginate(3);
         return view('pages.services')->with('products', $products);
     }
     //dynamic name profile
@@ -65,6 +66,9 @@ class PagesController extends Controller
 
         $product->save();
 
-        return "Product Added ";
+        //Session::put('success', 'Product has been added successfully');
+        $request->session()->put('success', 'Product has been added successfully');
+
+        return redirect('/create');
     }
 }

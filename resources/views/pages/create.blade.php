@@ -5,6 +5,14 @@ Home
 @section('content')
 <form action="{{url('/createProduct')}}" method="POST">
     {{ csrf_field() }}
+    @if (Session::has('success'))
+    <div class="alert alert-success">
+        {{-- {{Session::get('success')}} --}}
+        {{session()->get('success')}}
+        {{-- {{Session::put('success',null)}} --}}
+        {{session()->put('success',null)}}
+    </div>
+    @endif
     <div class="form-group">
         <label for="product_name">Product Name</label>
         <input type="text" id="product_name" name="product_name" placeholder="Product Name" required>
