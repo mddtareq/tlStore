@@ -59,6 +59,12 @@ class PagesController extends Controller
 
     public function createProduct(Request $request)
     {
+        $this->validate($request, [
+            'product_name' => 'required',
+            'product_price' => 'required',
+            'product_description' => 'required'
+        ]);
+
         $product = new Product();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
