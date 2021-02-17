@@ -3,6 +3,19 @@
 Services
 @endsection
 @section('content')
+@if (Session::has('success'))
+<div id='cus-alt' class="alert alert-success">
+    {{-- {{Session::get('success')}} --}}
+    {{session()->get('success')}}
+    {{-- {{Session::put('success',null)}} --}}
+    {{session()->put('success',null)}}
+</div>
+<script>
+    setTimeout(function(){
+            document.getElementById('cus-alt').style.display='none';
+        }, 3000);
+</script>
+@endif
 <h1>Product Id : {{$product->id}}</h1>
 <div class="">
     <h4>{{$product->product_name}}</h4>

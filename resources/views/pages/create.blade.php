@@ -3,19 +3,7 @@
 Home
 @endsection
 @section('content')
-@if (Session::has('success'))
-<div id='cus-alt' class="alert alert-success">
-    {{-- {{Session::get('success')}} --}}
-    {{session()->get('success')}}
-    {{-- {{Session::put('success',null)}} --}}
-    {{session()->put('success',null)}}
-</div>
-<script>
-    setTimeout(function(){
-            document.getElementById('cus-alt').style.display='none';
-        }, 3000);
-</script>
-@endif
+
 {{-- <form action="{{url('/createProduct')}}" method="POST"> --}}
 {{--laravelcollective--}}
 {!! Form::open(['action'=>'PagesController@createProduct','method'=>'POST'])!!}

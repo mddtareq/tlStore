@@ -60,3 +60,5 @@ Route::post('/createProduct', 'PagesController@createProduct');
 Route::get('/edit/{id}', 'PagesController@editProduct');
 
 Route::post('/update', 'PagesController@updateProduct');
+
+Route::get('/delete/{id}', 'PagesController@deleteProduct');
