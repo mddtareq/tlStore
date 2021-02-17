@@ -108,9 +108,10 @@ class PagesController extends Controller
         // return view('pages.edit');
         $request->session()->put('success', 'Product has been updated successfully');
 
-        return redirect('/show/2');
-    } 
-    public function deleteProduct($id){
+        return redirect('/show/1');
+    }
+    public function deleteProduct($id)
+    {
         $product = Product::find($id);
         $product->delete();
         session()->put('success', 'Product has been deleted successfully');
