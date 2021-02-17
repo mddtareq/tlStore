@@ -3,8 +3,8 @@
 Home
 @endsection
 @section('content')
-<form action="" method="post">
-    <div class="form-group">
+<form action="{{url('/createProduct')}}" method="POST">
+    {{-- <div class="form-group">
         <label for="product_name">Product Name</label>
         <input type="text" id="product_name" name="product_name" placeholder="Product Name" required>
     </div>
@@ -16,9 +16,10 @@ Home
     <br>
     <div class="form-group">
         <label for="product_description">Product Description</label>
-        <input type="text" id="product_description" name="product_description" placeholder="Product description" required>
+        <input type="text" id="product_description" name="product_description" placeholder="Product description"
+            required>
     </div>
-    <br>
+    <br> --}}
     <input type="submit" value="Add Product" class="btn btn-primary">
 </form>
 @endsection

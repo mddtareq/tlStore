@@ -55,4 +55,16 @@ class PagesController extends Controller
     {
         return view('pages.create');
     }
+
+    public function createProduct(Request $request)
+    {
+        // $product = new Product();
+        // $product->product_name = $request->product->product_name;
+        // $product->product_price = $request->product->product_price;
+        // $product->product_description = $request->product->product_description;
+
+        // $product->save();
+
+        return "Product Added";
+    }
 }

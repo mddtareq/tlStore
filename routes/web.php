@@ -54,3 +54,5 @@ Route::get('/profile/{name}/{id}', 'PagesController@profile');
 Route::get('/show/{id}', 'PagesController@show');
 
 Route::get('/create', 'PagesController@create');
+
+Route::get('/createProduct', 'PagesController@createProduct');
