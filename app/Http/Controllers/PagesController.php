@@ -107,8 +107,7 @@ class PagesController extends Controller
         $product->update();
         // return view('pages.edit');
         $request->session()->put('success', 'Product has been updated successfully');
-
-        return redirect('/show/1');
+        return redirect('/show/' . $request->input('id'));
     }
     public function deleteProduct($id)
     {
