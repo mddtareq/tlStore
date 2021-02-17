@@ -56,3 +56,7 @@ Route::get('/show/{id}', 'PagesController@show');
 Route::get('/create', 'PagesController@create');
 
 Route::post('/createProduct', 'PagesController@createProduct');
+
+Route::get('/edit/{id}', 'PagesController@editProduct');
+
+Route::post('/update', 'PagesController@updateProduct');

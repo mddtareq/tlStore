@@ -49,6 +49,7 @@ class PagesController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
+        // $product = DB::table('products')->where('id', $id)->first();
         return view('pages.show')->with('product', $product);
     }
 
@@ -89,5 +90,21 @@ class PagesController extends Controller
         $request->session()->put('success', 'Product has been added successfully');
 
         return redirect('/create');
+    }
+    public function editProduct($id)
+    {
+        $product = Product::find($id);
+        return view('pages.edit')->with('product', $product);
+    }
+
+    public function updateProduct(Request $request)
+    {
+
+        $product = Product::find($request->input('id'));
+        $product->product_name = $request->input('product_name');
+        $product->product_price = $request->input('product_price');
+        $product->product_description = $request->input('product_description');
+        $product->update();
+        // return view('pages.edit');
     }
 }
