@@ -59,6 +59,7 @@ class PagesController extends Controller
 
     public function createProduct(Request $request)
     {
+        //laravelcollective required
         $this->validate($request, [
             'product_name' => 'required',
             'product_price' => 'required',
@@ -66,6 +67,8 @@ class PagesController extends Controller
         ]);
 
         $product = new Product();
+        //laravelcollective
+        //$product->product_name = $request->input('product_name');
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_description = $request->product_description;

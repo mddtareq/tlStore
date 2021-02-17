@@ -17,6 +17,7 @@ Home
 </script>
 @endif
 {{-- <form action="{{url('/createProduct')}}" method="POST"> --}}
+{{--laravelcollective--}}
 {!! Form::open(['action'=>'PagesController@createProduct','method'=>'POST'])!!}
 {{ csrf_field() }}
 <div class="form-group">
