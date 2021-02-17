@@ -59,12 +59,20 @@ class PagesController extends Controller
 
     public function createProduct(Request $request)
     {
-        $product = new Product();
-        $product->product_name = $request->product_name;
-        $product->product_price = $request->product_price;
-        $product->product_description = $request->product_description;
+        // $product = new Product();
+        // $product->product_name = $request->product_name;
+        // $product->product_price = $request->product_price;
+        // $product->product_description = $request->product_description;
 
-        $product->save();
+        // $product->save();
+
+        $data = array();
+        $data['product_name'] = $request->product_name;
+        $data['product_price'] = $request->product_price;
+        $data['product_description'] = $request->product_description;
+
+        DB::table('products')
+            ->insert($data);
 
         //Session::put('success', 'Product has been added successfully');
         $request->session()->put('success', 'Product has been added successfully');
