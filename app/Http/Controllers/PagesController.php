@@ -58,13 +58,13 @@ class PagesController extends Controller
 
     public function createProduct(Request $request)
     {
-        // $product = new Product();
-        // $product->product_name = $request->product->product_name;
-        // $product->product_price = $request->product->product_price;
-        // $product->product_description = $request->product->product_description;
+        $product = new Product();
+        $product->product_name = $request->product_name;
+        $product->product_price = $request->product_price;
+        $product->product_description = $request->product_description;
 
-        // $product->save();
+        $product->save();
 
-        return "Product Added";
+        return "Product Added ";
     }
 }
